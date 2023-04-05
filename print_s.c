@@ -3,28 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 12:16:12 by nedebies          #+#    #+#             */
-/*   Updated: 2022/01/13 12:16:14 by nedebies         ###   ########.fr       */
+/*   Created: 2023/04/05 11:48:34 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/05 11:48:50 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	print_s(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-	{
-		i = print_s("(null)");
-		return (i);
-	}
-	else if (str[0] == '\0')
-		return (0);
-	while (str[i])
-		i += print_c(str[i]);
-	return (i);
-}
