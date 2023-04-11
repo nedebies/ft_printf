@@ -1,5 +1,6 @@
 SRC =	./libft/ft_putchar_fd.c \
 		./libft/ft_strdup.c \
+		./libft/ft_strlen.c \
 		ft_printf.c \
 		print_c.c \
 		print_nbr.c \

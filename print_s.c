@@ -10,3 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	print_s(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+	{
+		i = print_s("(null)");
+		return (i);
+	}
+	else if (!str[0])
+		return (0);
+	while (str[i])
+		i += print_c(str[i]);
+	return (i);
+}
