@@ -19,9 +19,6 @@ RM = rm -rf
 
 HEADER = ./
 
-TEST = ./main.c
-
-
 all: $(NAME)
 
 $(OBJS): $(SRC)
@@ -31,12 +28,6 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-test: re
-	$(GCC) -I$(HEADER) $(TEST) $(NAME)
-	./a.out
-
-lib: all clean
-
 clean:
 	$(RM) $(OBJS)
 
@@ -45,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all test clean fclean re
+.PHONY: all clean fclean re
