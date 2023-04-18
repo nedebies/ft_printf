@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:37:18 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/28 12:33:09 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 23:02:15 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/03 10:51:04 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putstr_fd(char *s, int fd)
 	{
 		while (s[i])
 		{
-			write(fd, &s[i], 1);
+			ft_putchar_fd(s[i], fd);
 			i++;
 		}
 	}

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+         #
+#    By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 09:54:51 by nedebies          #+#    #+#              #
-#    Updated: 2021/04/21 14:17:01 by nedebies         ###   ########.fr        #
+#    Updated: 2023/03/28 22:33:02 by nesdebie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME  = libft.a
+NAME  = libft
 
 SRCS 	=	ft_atoi.c\
 		ft_isalpha.c\
@@ -22,7 +22,7 @@ SRCS 	=	ft_atoi.c\
 		ft_tolower.c\
 		ft_bzero.c\
 		ft_isascii.c\
-		ft_memccpy.c\
+		ft_striteri.c\
 		ft_memmove.c\
 		ft_strdup.c\
 		ft_strlen.c\
@@ -47,17 +47,17 @@ SRCS 	=	ft_atoi.c\
 		ft_putnbr_fd.c\
 		ft_putstr_fd.c\
 
-BONUS		= ft_lstadd_back.c\
-				  ft_lstadd_front.c\
-				  ft_lstclear.c\
-				  ft_lstdelone.c\
-				  ft_lstiter.c\
-				  ft_lstlast.c\
-				  ft_lstnew.c\
-				  ft_lstsize.c\
-				  ft_lstmap.c\
+BONUS		= ft_lstadd_back_bonus.c\
+				  ft_lstadd_front_bonus.c\
+				  ft_lstclear_bonus.c\
+				  ft_lstdelone_bonus.c\
+				  ft_lstiter_bonus.c\
+				  ft_lstlast_bonus.c\
+				  ft_lstnew_bonus.c\
+				  ft_lstsize_bonus.c\
+				  ft_lstmap_bonus.c\
 
-CC			=	gcc
+CC			=	cc
 
 FLAGS		=	-Wall -Wextra -Werror
 
@@ -69,25 +69,23 @@ ARRCS		=	ar rcs
 
 RM		= rm -rf
 
-.c.o:	$(SRCS)
+.c.o:
 	$(CC) $(FLAGS) -c -o $@ $<
 
-$(NAME): 	$(OBJS)
-		$(ARRCS) $(NAME) $^
+$(NAME).a: 	$(OBJS)
+		$(ARRCS) $(NAME).a $^
 
-bonus: $(OBJS_B)
-	$(ARRCS) $(NAME) $^
+bonus: $(OBJS) $(OBJS_B)
+	$(ARRCS) $(NAME).a $^
 
-all:	 $(NAME)
+all:	 $(NAME).a
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)
 
 fclean:		clean
-		$(RM) $(NAME)
+		$(RM) $(NAME).a
 
 re:		fclean all
-
-
 
 .PHONY:			all clean fclean re bonus

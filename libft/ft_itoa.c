@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:34:44 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/02 13:23:19 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 22:53:56 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/03/28 22:54:08 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 	nb = malloc(sizeof(char) * (len + 1));
 	if (!nb)
 		return (0);
-	nb[len] = '\0';
+	nb[len] = 0;
 	n = ft_setnegative(n);
 	while (len-- > 0)
 	{

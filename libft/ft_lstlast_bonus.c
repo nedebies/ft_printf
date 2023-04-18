@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 15:50:32 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/12 15:50:34 by nedebies         ###   ########.fr       */
+/*   Created: 2023/04/06 17:42:15 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/06 17:42:17 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp;
-
-	if (lst && f)
-	{
-		tmp = lst->next;
-		f(lst->content);
-		ft_lstiter(tmp, f);
-	}
+	if (ft_lstsize(lst) == 0)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

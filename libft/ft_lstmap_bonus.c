@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 15:51:06 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/30 14:16:30 by nedebies         ###   ########.fr       */
+/*   Created: 2023/04/06 17:42:34 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/06 17:42:36 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*dest;
 
 	dest = NULL;
-	while (lst && f)
+	while (lst)
 	{
 		new = ft_lstnew((*f)(lst->content));
 		if (new)

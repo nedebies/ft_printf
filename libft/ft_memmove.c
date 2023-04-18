@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:36:42 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/24 14:36:54 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 23:10:45 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/03 10:52:01 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	*setret(void *dest, const void *src, size_t n)
 	if (src < dest)
 	{
 		i = n;
-		while (i > 0 && (dest != NULL || src != NULL))
+		while (i > 0 && (dest || src))
 		{
 			i--;
 			d[i] = s[i];
@@ -32,7 +32,7 @@ static void	*setret(void *dest, const void *src, size_t n)
 	}
 	else if (src > dest)
 	{
-		while (i < n && (dest != NULL || src != NULL))
+		while (i < n && (dest || src))
 		{
 			d[i] = s[i];
 			i++;

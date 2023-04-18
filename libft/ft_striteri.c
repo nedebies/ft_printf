@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 15:50:51 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/12 15:50:53 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 23:03:31 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/03 10:50:15 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (ft_lstsize(lst) == 0)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	int	i;
+
+	i = 0;
+	if (s && f)
+	{
+		while (s[i])
+		{
+			f(i, s + i);
+			i++;
+		}
+	}
 }

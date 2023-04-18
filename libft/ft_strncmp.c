@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:39:40 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/22 11:01:53 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 23:04:38 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/03/28 23:04:47 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(char const *s1, char const *s2, size_t n)
 		return (0);
 	while ((unsigned char)*s1 == (unsigned char)*s2 && n--)
 	{
-		if (*s1 == '\0' || *s2 == '\0')
+		if (!*s1 || !*s2)
 			return (0);
 		s1++;
 		s2++;

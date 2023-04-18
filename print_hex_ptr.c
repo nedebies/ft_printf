@@ -6,7 +6,7 @@
 /*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:48:02 by nesdebie          #+#    #+#             */
-/*   Updated: 2023/04/05 11:50:16 by nesdebie         ###   ########.fr       */
+/*   Updated: 2023/04/18 13:37:59 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,23 @@ static int	print_hex_p(unsigned long n, char *str)
 	return (cnt);
 }
 
-int check_hex_ptr(unsigned long nb, char c)
+int	check_hex_ptr(unsigned long nb, char c)
 {
 	int		cnt;
-	char	*str;
 
 	cnt = 0;
 	if (c == 'p')
 	{
 		if (nb == 0)
 		{
-			cnt += print_s("(nil)");
+			cnt += print_s("0x0");
 			return (cnt);
 		}
 		cnt += print_s("0x");
 	}
 	if (c == 'x' || c == 'p')
-		str = ft_strdup("0123456789abcdef");
+		cnt += print_hex_p(nb, "0123456789abcdef");
 	else
-		str = ft_strdup("0123456789ABCDEF");
-	cnt += print_hex_p(nb, str);
-	free(str);
+		cnt += print_hex_p(nb, "0123456789ABCDEF");
 	return (cnt);
 }

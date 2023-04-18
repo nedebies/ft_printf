@@ -6,15 +6,15 @@
 /*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:46:34 by nesdebie          #+#    #+#             */
-/*   Updated: 2023/04/05 11:46:55 by nesdebie         ###   ########.fr       */
+/*   Updated: 2023/04/14 12:50:49 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_parse_type(va_list args, const char *type)
+static int	ft_parse_type(va_list args, const char *type)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	if (*type == 'c')
@@ -33,7 +33,7 @@ static int ft_parse_type(va_list args, const char *type)
 		c += check_hex_ptr((unsigned long) va_arg(args, void *), *type);
 	else if (*type == '%')
 		c += print_c('%');
-	else 
+	else
 		return (-1);
 	return (c);
 }

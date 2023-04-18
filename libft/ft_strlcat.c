@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 20:39:17 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/29 00:23:11 by nedebies         ###   ########.fr       */
+/*   Created: 2023/03/28 23:03:52 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/06 12:49:25 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 size_t	ft_strlcat(char *dest, char const *src, size_t n)
 {
+	size_t	dest_len;
 	size_t	i;
-	size_t	j;
 	size_t	tmp;
 
-	i = ft_strlen(dest);
-	j = 0;
-	while (src[j] && (j + i + 1) < n)
+	if (!dest && n == 0)
+		return (ft_strlen(src));
+	dest_len = ft_strlen(dest);
+	i = 0;
+	while (src[i] && (i + dest_len + 1) < n)
 	{
-		dest[i + j] = src[j];
-		j++;
+		dest[dest_len + i] = src[i];
+		i++;
 	}
-	if (!src[j])
-		dest[i + j] = '\0';
-	tmp = j;
-	j = ft_strlen(src);
+	if (!src[i])
+		dest[dest_len + i] = 0;
+	tmp = i;
+	i = ft_strlen(src);
 	if (n == 0)
-		return (j);
-	if (i < n)
+		return (i);
+	if (dest_len < n)
 	{
-		dest[tmp + i] = '\0';
-		return (i + j);
+		dest[tmp + dest_len] = 0;
+		return (dest_len + i);
 	}
-	else
-		return (n + j);
-	return (n);
+	return (n + i);
 }

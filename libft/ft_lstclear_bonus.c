@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nedebies <nedebies@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nesdebie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 15:49:55 by nedebies          #+#    #+#             */
-/*   Updated: 2021/04/12 15:49:57 by nedebies         ###   ########.fr       */
+/*   Created: 2023/04/06 17:41:23 by nesdebie          #+#    #+#             */
+/*   Updated: 2023/04/06 17:41:27 by nesdebie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (lst == 0 || del == 0)
+	if (!lst || !del)
 		return ;
 	tmp = *lst;
-	while (tmp != NULL)
+	while (tmp)
 	{
 		*lst = tmp;
 		tmp = tmp->next;
